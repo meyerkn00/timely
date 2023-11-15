@@ -1,5 +1,6 @@
 ---
 output: github_document
+eval: FALSE
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -40,7 +41,7 @@ The result, "iris_111123_11.00.csv", is reached, but remembering to copy-paste a
 
 That is where timely() comes in.
 
-The same operation in using timely() is as follows:
+The same operation using timely() is done as follows:
 
 ```{r}
 library(timely)
