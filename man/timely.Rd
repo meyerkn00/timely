@@ -2,7 +2,7 @@
 % Please edit documentation in R/timely.R
 \name{timely}
 \alias{timely}
-\title{Timely: Generate a time-stamped filename}
+\title{Generate a time-stamped filename}
 \usage{
 timely(name = "test", extension = "csv", time = "\%m\%d\%y_\%H.\%M")
 }
@@ -17,7 +17,7 @@ timely(name = "test", extension = "csv", time = "\%m\%d\%y_\%H.\%M")
 a string
 }
 \description{
-Timely: Generate a time-stamped filename
+Generate a time-stamped filename
 }
 \examples{
 timely()

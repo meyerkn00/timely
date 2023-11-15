@@ -20,14 +20,16 @@ You can install the development version of timely from
 devtools::install_github("meyerkn00/timely")
 #> Downloading GitHub repo meyerkn00/timely@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/RtmphraRiA/remotesb06bcd43549/meyerkn00-timely-a2c6b7c/DESCRIPTION’ ... OK
-#> * preparing ‘timely’:
-#> * checking DESCRIPTION meta-information ... OK
-#> * checking for LF line-endings in source and make files and shell scripts
-#> * checking for empty or unneeded directories
-#> Omitted ‘LazyData’ from DESCRIPTION
-#> * building ‘timely_0.1.0.tar.gz’
-#> Installing package into '/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmp0EE7i8/temp_libpathaaaf49879fc9'
+#>      checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/RtmpgsEGUa/remotesb9373aca8fc9/meyerkn00-timely-a2c6b7c/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/RtmpgsEGUa/remotesb9373aca8fc9/meyerkn00-timely-a2c6b7c/DESCRIPTION’
+#>   ─  preparing ‘timely’:
+#>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>   ─  checking for empty or unneeded directories
+#>      Omitted ‘LazyData’ from DESCRIPTION
+#>   ─  building ‘timely_0.1.0.tar.gz’
+#>      
+#> 
+#> Installing package into '/Users/meyerkn/Library/R/x86_64/4.2/library'
 #> (as 'lib' is unspecified)
 ```
 
@@ -42,7 +44,7 @@ like:
 data(iris)
 write.csv(paste0("iris", "_", format(Sys.time(), format="%m%d%y_%H.%M"), ".csv"))
 #> "","x"
-#> "1","iris_111523_11.45.csv"
+#> "1","iris_111523_13.43.csv"
 ```
 
 The result, “iris_111123_11.00.csv”, is reached, but remembering to
