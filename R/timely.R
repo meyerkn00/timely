@@ -2,7 +2,7 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-#' Timely: Generate a time-stamped filename
+#' Generate a time-stamped filename
 #'
 #' @param name a string with the title of the file
 #' @param extension a file extension, e.g. csv or dta
