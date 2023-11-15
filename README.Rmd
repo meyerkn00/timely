@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # timely
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/meyerkn00/timely/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/meyerkn00/timely/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of timely is to simplify the creation of filenames when using functions such as write_csv() or write_dta(). It provides one function, timely(), which does so.
@@ -33,7 +34,7 @@ devtools::install_github("meyerkn00/timely")
 
 When working with data in R, the time comes to output the data into a file. Writing that filename should be trivial, but once one considers adding a timestamp the code becomes more complicated than one would like:
 ```{r}
-paste0("iris", "_", format(Sys.time(), format="%m%d%y_%H.%M"), ".csv")
+paste0("iris", "_", format(Sys.time(), format = "%m%d%y_%H.%M"), ".csv")
 ```
 
 The result, "iris_111123_11.00.csv", is reached, but remembering to copy-paste and edit this every time one wants to write an output file is tedious.

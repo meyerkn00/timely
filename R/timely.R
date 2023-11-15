@@ -15,5 +15,5 @@
 #' timely()
 #' timely("data_output", "dta", "%m%d%y_%H.%M")
 timely <- function(name = "test", extension = "csv", time = "%m%d%y_%H.%M") {
-  paste0(name, "_", format(Sys.time(), format=time), ".", extension)
+  paste0(name, "_", format(Sys.time(), format = time), ".", extension)
 }

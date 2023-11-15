@@ -4,6 +4,8 @@
 # timely
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/meyerkn00/timely/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/meyerkn00/timely/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of timely is to simplify the creation of filenames when using
@@ -20,14 +22,14 @@ You can install the development version of timely from
 devtools::install_github("meyerkn00/timely")
 #> Downloading GitHub repo meyerkn00/timely@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmprgp3m1/remotescb1f1bbad313/meyerkn00-timely-7d86ef6/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/RtmpPHo7Cp/remotesceac47eb5651/meyerkn00-timely-5ce96e9/DESCRIPTION’ ... OK
 #> * preparing ‘timely’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> Omitted ‘LazyData’ from DESCRIPTION
 #> * building ‘timely_0.1.0.tar.gz’
-#> Installing package into '/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmp0EE7i8/temp_libpathaaaf6ee68649'
+#> Installing package into '/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmp0EE7i8/temp_libpathaaaf1ed70799'
 #> (as 'lib' is unspecified)
 ```
 
@@ -39,8 +41,8 @@ adding a timestamp the code becomes more complicated than one would
 like:
 
 ``` r
-paste0("iris", "_", format(Sys.time(), format="%m%d%y_%H.%M"), ".csv")
-#> [1] "iris_111523_15.59.csv"
+paste0("iris", "_", format(Sys.time(), format = "%m%d%y_%H.%M"), ".csv")
+#> [1] "iris_111523_16.09.csv"
 ```
 
 The result, “iris_111123_11.00.csv”, is reached, but remembering to
@@ -55,7 +57,7 @@ The same operation using timely() is done as follows:
 library(timely)
 
 timely("iris", "csv")
-#> [1] "iris_111523_15.59.csv"
+#> [1] "iris_111523_16.09.csv"
 ```
 
 By making some base assumptions (such as the standard date/time format
