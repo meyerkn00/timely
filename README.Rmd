@@ -51,4 +51,6 @@ timely("iris", "csv")
 By making some base assumptions (such as the standard date/time format of mdy_H.M) allows this operation to be completed with fewer keystrokes and less effort.
 timely() is built on format() so that one can specify non-default time formats using that syntax. This function can be used within functions like write.csv() and haven::write_dta() to create filenames.
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+## Please note:
+
+Currently this project is written for the use of the developer. As such, the timezone is not specified and the time/date format defaults to North American structure (e.g. month/date/year). If you would like different defaults supported, please reach out at karl@themeyers.org and let me know.

@@ -20,14 +20,14 @@ You can install the development version of timely from
 devtools::install_github("meyerkn00/timely")
 #> Downloading GitHub repo meyerkn00/timely@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmpiq8TMt/remotesc9cf46b845ff/meyerkn00-timely-3410169/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmprgp3m1/remotescb1f1bbad313/meyerkn00-timely-7d86ef6/DESCRIPTION’ ... OK
 #> * preparing ‘timely’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> Omitted ‘LazyData’ from DESCRIPTION
 #> * building ‘timely_0.1.0.tar.gz’
-#> Installing package into '/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmp0EE7i8/temp_libpathaaaf48dc6db6'
+#> Installing package into '/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmp0EE7i8/temp_libpathaaaf6ee68649'
 #> (as 'lib' is unspecified)
 ```
 
@@ -40,7 +40,7 @@ like:
 
 ``` r
 paste0("iris", "_", format(Sys.time(), format="%m%d%y_%H.%M"), ".csv")
-#> [1] "iris_111523_15.56.csv"
+#> [1] "iris_111523_15.59.csv"
 ```
 
 The result, “iris_111123_11.00.csv”, is reached, but remembering to
@@ -55,7 +55,7 @@ The same operation using timely() is done as follows:
 library(timely)
 
 timely("iris", "csv")
-#> [1] "iris_111523_15.56.csv"
+#> [1] "iris_111523_15.59.csv"
 ```
 
 By making some base assumptions (such as the standard date/time format
@@ -65,5 +65,10 @@ non-default time formats using that syntax. This function can be used
 within functions like write.csv() and haven::write_dta() to create
 filenames.
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+## Please note:
+
+Currently this project is written for the use of the developer. As such,
+the timezone is not specified and the time/date format defaults to North
+American structure (e.g. month/date/year). If you would like different
+defaults supported, please reach out at <karl@themeyers.org> and let me
+know.
