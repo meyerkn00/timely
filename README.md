@@ -20,14 +20,14 @@ You can install the development version of timely from
 devtools::install_github("meyerkn00/timely")
 #> Downloading GitHub repo meyerkn00/timely@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/RtmpAtVzSB/remotesc8d62f69f34/meyerkn00-timely-2673abc/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmpiq8TMt/remotesc9cf46b845ff/meyerkn00-timely-3410169/DESCRIPTION’ ... OK
 #> * preparing ‘timely’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> Omitted ‘LazyData’ from DESCRIPTION
 #> * building ‘timely_0.1.0.tar.gz’
-#> Installing package into '/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmp0EE7i8/temp_libpathaaaf5954e0bf'
+#> Installing package into '/private/var/folders/29/xs9p5cxx6x1774_yzv_yj4vm0000gw/T/Rtmp0EE7i8/temp_libpathaaaf48dc6db6'
 #> (as 'lib' is unspecified)
 ```
 
@@ -39,10 +39,8 @@ adding a timestamp the code becomes more complicated than one would
 like:
 
 ``` r
-data(iris)
-write.csv(paste0("iris", "_", format(Sys.time(), format="%m%d%y_%H.%M"), ".csv"))
-#> "","x"
-#> "1","iris_111523_15.51.csv"
+paste0("iris", "_", format(Sys.time(), format="%m%d%y_%H.%M"), ".csv")
+#> [1] "iris_111523_15.56.csv"
 ```
 
 The result, “iris_111123_11.00.csv”, is reached, but remembering to
@@ -56,14 +54,16 @@ The same operation using timely() is done as follows:
 ``` r
 library(timely)
 
-data(iris)
-write.csv(iris, timely("iris", "csv"))
+timely("iris", "csv")
+#> [1] "iris_111523_15.56.csv"
 ```
 
 By making some base assumptions (such as the standard date/time format
 of mdy_H.M) allows this operation to be completed with fewer keystrokes
 and less effort. timely() is built on format() so that one can specify
-non-default time formats using that syntax.
+non-default time formats using that syntax. This function can be used
+within functions like write.csv() and haven::write_dta() to create
+filenames.
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
 up-to-date. `devtools::build_readme()` is handy for this.
