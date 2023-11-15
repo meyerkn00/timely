@@ -31,25 +31,26 @@ devtools::install_github("meyerkn00/timely")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+When working with data in R, the time comes to output the data into a file. Writing that filename should be trivial, but once one considers adding a timestamp the code becomes more complicated than one would like:
+```{r}
+data(iris)
+write.csv(paste0("iris", "_", format(Sys.time(), format="%m%d%y_%H.%M"), ".csv"))
+```
 
-```{r example}
+The result, "iris_111123_11.00.csv", is reached, but remembering to copy-paste and edit this every time one wants to write an output file is tedious.
+
+That is where timely() comes in.
+
+The same operation in using timely() is as follows:
+
+```{r}
 library(timely)
-## basic example code
+
+data(iris)
+write.csv(iris, timely("iris", "csv"))
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
+By making some base assumptions (such as the standard date/time format of mdy_H.M) allows this operation to be completed with fewer keystrokes and less effort.
+timely() is built on format() so that one can specify non-default time formats using that syntax.
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
